@@ -22,7 +22,7 @@ df = pd.DataFrame(df_dict,
 scaler = StandardScaler()
 df_sc = scaler.fit_transform(df)
 
-pca = PCA().fit(df)
+pca = PCA().fit(df_sc)
 ex_var = list(pca.explained_variance_ratio_)
 ex_sum = 0
 n_comp = 0
