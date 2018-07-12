@@ -17,3 +17,6 @@ def info(df,sort = True,save = "No"):
 def equal_2_default(df,val = 0):
     for column in df.columns:
         print("{0:35s} has {1:10} default values".format(column,sum(df[column] == val)))
+        
+def drop_cols(df,columns):
+    return df.drop(columns,axis=1,inplace=True)
