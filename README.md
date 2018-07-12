@@ -1,1 +1,1 @@
-Modules build for dimensionality reduction and studying correlation
+Modules build for Machine Learning workflow
