@@ -10,7 +10,7 @@ def info(df,sort = True,save = "No"):
     df_info  = pd.concat([dtype, missing_pct.round(2),nuni], axis=1, keys=['type','missing','nunique'])
     if sort == True:
         df_info.sort_values (['missing'],ascending=False,inplace=True)
-    if (save == "Yes")
+    if (save == "Yes"):
         df_info.to_csv(os.path.join(folder,'info.csv'))
     return df_info
 
