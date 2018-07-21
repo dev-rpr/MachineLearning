@@ -10,4 +10,13 @@ test[col + '_binned'] = pd.cut(test[col], bins=bins, labels=labels,right=True,in
 df.drop(col,axis=1,inplace=True)
 
 
-##
+
+#create bins where 5 unique values have to be binned together
+col_bins = ['col1','col2','col3']
+for col in col_bins: #5 unique values in each bin
+    uniques = sorted(df[col].unique())
+    no_bins = int(df[col].nunique()/5)
+    bins = [uniques[i*5] for i in range(no_bins)]
+    bins.append(uniques[len(uniques)-1])
+    labels = [label_str[i-1:i] for i in range(1,no_bins+1)]
+    df[col + '_binned'] = pd.cut(df[col], bins=bins, labels=labels,right=True,include_lowest=True)
