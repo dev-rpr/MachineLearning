@@ -1,3 +1,5 @@
+label_str = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+
 #A column to be binned in 10 bins
 col = 'col_name'
 uniques = sorted(df[col].unique())
